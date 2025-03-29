@@ -1,0 +1,134 @@
+/*General changes*/
+body{ background-color: rgb(139, 139, 139);
+    background-blend-mode: darken;
+    margin-top: 0; margin: 0; padding: 0;
+    color: rgb(1, 1, 1);
+    font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+    font-size: 1.6rem;}
+    
+ .background--oscuro{background-color: rgba(0, 0, 0, 0.699);}
+    
+    li{list-style: none;}
+    
+    a{text-decoration: none;
+    color: black;}
+
+    i{font-size: xx-large;}
+
+    h1{text-align: center;
+        font-size: 5.3rem;}
+
+    h2 {font-size: 3rem ;}
+        
+    .titulo__principal {
+        color: rgb(255, 255, 255);
+        font-size: 10vw;
+        font-weight: bolder;}
+        
+    #background__index { 
+        background-image: url(../img/fondo_index.png); 
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+        background-size: cover;
+    }   
+
+/*Navbar*/
+.navbar {
+    background-color: rgba(99, 99, 99, 0.783);
+    width: 100vw;
+    margin-top: 0;
+    .navbar-nav {
+        display: flex;
+        justify-content: space-around;
+        .nav-link{
+            display: block;
+            padding: 25px;
+            font-size: 2rem;
+        }
+    }
+}
+
+ /*Álbums*/
+ .albums--grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    object-fit: cover;
+    .name__album{text-align: center;}
+    figure img {width: 100%;}
+ }
+
+ /*Form*/
+
+.form--flex{    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ form {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 750px ;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: gray;
+
+ }
+    .form--grid{
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+       "nombre genero"
+       "gmail genero"
+       "fecha pais";}
+     
+     .form__nombre--grid{grid-area: nombre; }
+     .form__genero--grid{grid-area: genero;}
+     .form__gmail--grid{grid-area: gmail;}
+     .form__fecha--grid{grid-area: fecha;}
+     .form__pais--grid{grid-area: pais;}
+     .submit{text-align: center;} 
+ 
+/*Social media*/
+
+
+.contacto{display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+    "cuentas cuentas redes redes"
+    "numero numero numero logo" ;}
+    
+    .contacto__cuentas--grid{grid-area: cuentas;
+    justify-items: center;}
+    .contacto__redes--grid{grid-area: redes;}
+    .contacto__numero--grid{grid-area: numero;
+    justify-items: center;}
+    
+    .contacto__cuentas--flex{
+        display: flex;
+        li a {margin: 0 15px;}
+    }
+    
+    .logo img{border-radius: 70%;
+     width: 40%;}
+
+ /*Footer*/
+
+footer ul {
+    text-align: center;
+    font-family: "Martian Mono", serif;
+    color: rgb(255, 255, 255) ; 
+    font-size: 1.7rem;
+    li a {
+        font-size: 1,7rem;  
+        color: rgb(255, 255, 255);}
+  }
+   

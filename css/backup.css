@@ -81,15 +81,14 @@ color: rgb(1, 1, 1);
      background-color: gray;
 }
 
-.formulario--grid{ 
-display: grid;
-gap: 20px;
-grid-template-columns: repeat(2, 1fr);
-grid-template-rows: repeat(3, 1fr);
-grid-template-areas: 
-"nombre genero"
-"gmail genero"
-"fecha pais";}
+.formulario--grid{ display: grid;
+                   gap: 20px;
+                   grid-template-columns: repeat(2, 1fr);
+                   grid-template-rows: repeat(3, 1fr);
+                   grid-template-areas: 
+                  "nombre genero"
+                  "gmail genero"
+                  "fecha pais";}
 
 .formulario__nombre--grid{grid-area: nombre; }
 .formulario__genero--grid{grid-area: genero;}
