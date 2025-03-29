@@ -1,222 +1,72 @@
-
-/* Hoja o fondo*/
-body{ background-color: rgb(139, 139, 139);
-background-blend-mode: darken;
-margin-top: 0; margin: 0; padding: 0;
-color: rgb(1, 1, 1);
-font-weight: 500;
-font-family: 'Courier New', Courier, monospace;
-text-decoration: none;
-font-size: 1.6rem;}
-
-.background--oscuro{background-color: rgba(0, 0, 0, 0.699);}
-
-li{list-style: none;}
-
-/*Parte del fondo del index*/
-
-#background__index { 
-background-image: url(../img/fondo_index.png); 
-background-repeat: no-repeat;
-background-position-x: center;
-background-position-y: center;
-background-size: cover;}
-
-
-/*parte del menu*/
-.nav-link{text-decoration: none;
-color: black;
-display: block;
-padding: 25px ;
-font-size: 2rem;}
-
-.navbar-nav{ display: flex ;
-justify-content: space-around;}
-
-.navbar {background-color: rgba(99, 99, 99, 0.783);
-width: 100vw;
-margin-top: 0;
+/*General changes*/
+body {
+  background-color: rgb(139, 139, 139);
+  background-blend-mode: darken;
+  margin-top: 0;
+  margin: 0;
+  padding: 0;
+  color: rgb(1, 1, 1);
+  font-weight: 500;
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: none;
+  font-size: 1.6rem;
 }
 
-#user{font-size: xx-large;}
-
-/*titulo*/
-h1{text-align: center;
-font-size: 5.3rem;}
-
-h2 {font-size: 3rem ;}
-
-.titulo_principal h1 {
-color: rgb(255, 255, 255);
-font-size: 10vw;
-font-weight: bolder;}
-
-
-/*Albumes*/
-
-.albumes--grid{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 20px;
-    object-fit: cover;}
-
-.nombre_album{
-text-align: center;}
-
-figure img{width: 320px;}
-
-/*formulario de registro*/
-
-
-.formulario li label{text-decoration: none;
-color: rgb(1, 1, 1);
+.background--oscuro {
+  background-color: rgba(0, 0, 0, 0.699);
 }
 
-.form--center { padding-left: 30%}
-
-.formulario--backround{
-    width: 40vw;
-    border-radius: 4px;
-     background-color: gray;
+#background__index {
+  background-image: url(../img/fondo_index.png);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: cover;
 }
 
-
-.formulario--grid{ 
-display: grid;
-gap: 20px;
-grid-template-columns: repeat(2, 1fr);
-grid-template-rows: repeat(3, 1fr);
-grid-template-areas: 
-"nombre genero"
-"gmail genero"
-"fecha pais";}
-
-.formulario__nombre--grid{grid-area: nombre; }
-.formulario__genero--grid{grid-area: genero;}
-.formulario__gmail--grid{grid-area: gmail;}
-.formulario__fecha--grid{grid-area: fecha;}
-.formulario__pais--grid{grid-area: pais;}
-
-
-.enviar{text-align: center;}
-
-/*redes sociales*/
-
-.contacto{display: grid;
-grid-template-columns: repeat(4, 1fr);
-grid-template-rows: repeat(2, 1fr);
-grid-template-areas:
-"cuentas cuentas redes redes"
-"numero numero numero logo" ;}
-
-.contacto__cuentas--grid{grid-area: cuentas;
-justify-items: center;}
-
-.contacto__redes--grid{grid-area: redes;}
-
-.contacto__numero--grid{grid-area: numero;
-justify-items: center;}
-
-.contacto__cuentas--flex{display: flex;
+h1 {
+  text-align: center;
+  font-size: 5.3rem;
 }
 
-.contacto__cuentas--flex li a{text-decoration: none;
-color: rgb(35, 35, 35); 
-margin: 0 15px;
-font-size: xx-large;} 
+h2 {
+  font-size: 3rem;
+}
 
-.contacto__numero--width li i{font-size: xx-large;}
+.titulo__principal {
+  color: rgb(255, 255, 255);
+  font-size: 10vw;
+  font-weight: bolder;
+}
 
-.logo img{border-radius: 70%;
- width: 40%;}
+li {
+  list-style: none;
+}
 
+a {
+  text-decoration: none;
+  color: black;
+}
 
-/*Bio*/
+/*navbar*/
+.navbar {
+  background-color: rgba(99, 99, 99, 0.783);
+  width: 100vw;
+  margin-top: 0;
+}
+.navbar .navbar-nav {
+  display: flex;
+  justify-content: space-around;
+}
+.navbar .navbar-nav .nav-link {
+  color: black;
+  display: block;
+  padding: 25px;
+  font-size: 2rem;
+}
 
-.img__josh img , .img__ty img { width: 360px;}
+#user {
+  font-size: xx-large;
+}
 
-.bio{display: grid;
-justify-content: space-between ;
-grid-template-columns: repeat(4, 1fr);
-grid-template-rows: repeat(2, 1fr);
-grid-template-areas: 
-"img__ty img__josh info info"
-"txt__ty txt__josh info info";}
-
-.img__ty{grid-area: img__ty;}
-.img__josh{grid-area: img__josh;}
-.bio__tyler--grid {grid-area: txt__ty;}
-.bio__josh--grid{grid-area: txt__josh;}
-.bio__info--grid{grid-area: info;}
-
-
-/*footer*/
-
-footer ul {
- text-align: center;
- font-family: "Martian Mono", serif;
- color: rgb(255, 255, 255) ; 
-font-size: 1.7rem;}
-
-footer ul li a {
- font-size: 1.7rem;
-    text-decoration: none;
-    color: rgb(255, 255, 255);}
-
-  
-    @media screen and (max-width: 768px)
-    
-    { .background__index {background-image: url(../img/fondo_reponsive.jpeg);}
-
-     /*Albumes responsive*/
-        .albumes--grid
-        {
-        grid-template-columns: repeat(2, 1fr) ; 
-        grid-template-rows: repeat(4, 1fr)}
-        .figure img{ width: 250px;}
-
-    /*Formulario responsive*/
-
-      .formulario--grid{ display: grid;
-                grid-template-columns: repeat(1, 1fr);
-                grid-template-rows: repeat(6, 1fr);
-                grid-template-areas: 
-                "nombre"
-                "gmail"
-                "fecha"
-                "genero"
-                "genero"
-                "pais";}
-
-.formulario__nombre--grid{grid-area: nombre; }
-.formulario__genero--grid{grid-area: genero;}
-.formulario__gmail--grid{grid-area: gmail;}
-.formulario__fecha--grid{grid-area: fecha;}
-.formulario__pais--grid{grid-area: pais;}
- 
-.formulario--backround{padding: 65%;
-justify-items: center;}
-
-/* Bio responsive*/
-.bio{width: 100vw; 
-    justify-content: space-between;
-     grid-template-columns: repeat(2, 1fr);
-grid-template-rows:repeat(3, 1fr);
-grid-template-areas:
-"img__ty img__josh"
-"txt__ty txt__josh"
-"info      info" ;}
-
-.img__josh, .img__ty{width: 420px ;}
-
-/*contacto responsive*/
-
-.contacto{grid-template-columns: repeat(1, 1fr);
-grid-template-rows: repeat(4, 1fr) ;
-grid-template-areas: 
-"cuentas"
-"redes"
-"numero"
-"logo";}
-     }
+/*# sourceMappingURL=style.css.map */

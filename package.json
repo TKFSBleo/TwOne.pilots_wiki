@@ -1,0 +1,20 @@
+{
+  "name": "preentrega1_dipardo",
+  "version": "1.0.0",
+  "description": "Hola este es mi proyecto de Twenty One Pilots, aún me queda agregar mucha información del lore de TOP pero le tengo fe.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TKFSBleo/TwOne.pilots_wiki.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TKFSBleo/TwOne.pilots_wiki/issues"
+  },
+  "homepage": "https://github.com/TKFSBleo/TwOne.pilots_wiki#readme"
+}
