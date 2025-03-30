@@ -1,38 +1,43 @@
+@import 'variables';
+
 /*General changes*/
 body{ background-color: rgb(139, 139, 139);
     background-blend-mode: darken;
     margin-top: 0; margin: 0; padding: 0;
-    color: rgb(1, 1, 1);
+    color: $font__principal--color;
     font-weight: 500;
     font-family: 'Courier New', Courier, monospace;
     text-decoration: none;
-    font-size: 1.6rem;}
+    font-size: 1.5vw;}
     
  .background--oscuro{background-color: rgba(0, 0, 0, 0.699);}
     
     li{list-style: none;}
     
     a{text-decoration: none;
-    color: black;}
+    color: $font__principal--color;}
 
-    i{font-size: xx-large;}
+    i{font-size: 1.7rem;}
 
     h1{text-align: center;
-        font-size: 5.3rem;}
+        font-size: 5vw;}
 
     h2 {font-size: 3rem ;}
         
     .titulo__principal {
-        color: rgb(255, 255, 255);
-        font-size: 10vw;
-        font-weight: bolder;}
+        h1 {color: rgb(255, 255, 255);
+            font-size: 10vw;
+            font-weight: bolder;}
+    }
+
+   .img--size img{width: $img--size;} 
         
     #background__index { 
-        background-image: url(../img/fondo_index.png); 
-        background-repeat: no-repeat;
-        background-position-x: center;
-        background-position-y: center;
-        background-size: cover;
+         background-image: url(../img/fondo_index.png); 
+         background-repeat: no-repeat;
+         background-size: cover;
+         max-height: 100vw;
+         min-height: 50vw;
     }   
 
 /*Navbar*/
@@ -51,74 +56,73 @@ body{ background-color: rgb(139, 139, 139);
     }
 }
 
- /*Álbums*/
- .albums--grid{
+/*Albums*/
+.albums--grid{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 20px;
-    object-fit: cover;
-    .name__album{text-align: center;}
-    figure img {width: 100%;}
- }
+    object-fit: cover;}
+
+.name__album{
+text-align: center;}
+
+figure img{width: 100%;}
 
  /*Form*/
 
-.form--flex{    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
- form {
-    padding-top: 2%;
-    padding-bottom: 2%;
-    width: 750px ;
-    box-sizing: border-box;
-    border-radius: 4px;
-    background-color: gray;
-
- }
-    .form--grid{
-        display: grid;
-        gap: 20px;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        grid-template-areas: 
-       "nombre genero"
-       "gmail genero"
-       "fecha pais";}
+.form--flex{   
+    padding: 10px 20px;
+    margin: auto;
+     width: 360px;
+     background-color: gray; 
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 10px;
      
-     .form__nombre--grid{grid-area: nombre; }
-     .form__genero--grid{grid-area: genero;}
-     .form__gmail--grid{grid-area: gmail;}
-     .form__fecha--grid{grid-area: fecha;}
-     .form__pais--grid{grid-area: pais;}
-     .submit{text-align: center;} 
+    }
+    .submit{text-align: center;} 
+
+
+/*Social media*/ 
  
-/*Social media*/
-
-
 .contacto{display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
     "cuentas cuentas redes redes"
-    "numero numero numero logo" ;}
-    
+    "numero numero numero logo";
     .contacto__cuentas--grid{grid-area: cuentas;
-    justify-items: center;}
+        justify-items: $center;}
     .contacto__redes--grid{grid-area: redes;}
     .contacto__numero--grid{grid-area: numero;
-    justify-items: center;}
-    
+        justify-items: $center;
+     }
     .contacto__cuentas--flex{
         display: flex;
         li a {margin: 0 15px;}
-    }
-    
+     }
     .logo img{border-radius: 70%;
-     width: 40%;}
+        width: 40%;}
+ }
+
+ /*Bio*/  
+
+ .bio{
+    display: grid;
+    justify-content: space-between ;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    "img__ty img__josh info info"
+    "txt__ty txt__josh info info";
+    .img__ty{grid-area: img__ty;}
+    .img__josh{grid-area: img__josh;}
+    .bio__tyler--grid {grid-area: txt__ty;}
+    .bio__josh--grid{grid-area: txt__josh;}
+    .bio__info--grid{grid-area: info;}
+ }
 
  /*Footer*/
 
@@ -126,9 +130,9 @@ footer ul {
     text-align: center;
     font-family: "Martian Mono", serif;
     color: rgb(255, 255, 255) ; 
-    font-size: 1.7rem;
+
     li a {
-        font-size: 1,7rem;  
-        color: rgb(255, 255, 255);}
+      color: rgb(255, 255, 255);}
   }
    
+  @import 'responsive';

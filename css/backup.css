@@ -172,7 +172,7 @@ footer ul li a {
         {
         grid-template-columns: repeat(2, 1fr) ; 
         grid-template-rows: repeat(4, 1fr)}
-        .figure img{ width: 250px;}
+
 
     /*Formulario responsive*/
 
