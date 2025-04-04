@@ -30,10 +30,6 @@ body{ background-color: rgb(139, 139, 139);
             font-weight: bolder;}
     }
 
- @keyframes h1index { 
-    0% {opacity: 0;}
-    100% {opacity: 1;}
- }
 
    .img--size img{width: $img--size;} 
         
@@ -119,6 +115,7 @@ figure img{width: $img--size;}
     justify-content: space-between ;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    row-gap: 20px;
     grid-template-areas: 
     "img__ty img__josh info info"
     "txt__ty txt__josh info info";
