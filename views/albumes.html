@@ -15,7 +15,8 @@
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
      <!--CSS propio-->
       <link rel="stylesheet" href="../css/styles.css">
-      
+         <!-- Animaciones-->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
 <body>
     
@@ -52,9 +53,10 @@
 <main>
 <h1>ÁLBUMES</h1>
 
+
     <section class="albums--grid">
 
-<div>
+ <div data-aos="zoom-in-down">
  
    <figure>
     <img src="../img/self_tituled.jpg" alt="Imagen del álbum Self Tituled">
@@ -66,7 +68,7 @@
 
 </div>
 
- <div>
+<div data-aos="zoom-in-down">
 
  <figure>
     <img src="../img/regional_at_best_album.jpeg" alt="Imagen del álbum Regional at Best">
@@ -78,7 +80,7 @@
 
 </div>
 
- <div>
+<div data-aos="zoom-in-down">
 
  <figure>
     <img src="../img/vessel_album.jpg" alt="Imagen del álbum de Vessel">
@@ -90,18 +92,19 @@
 
  </div>
 
- <div>
+ <div data-aos="zoom-in-down">
 
   <figure>
     <img src="../img/blurryface_album.jpg" alt="Imagen del álbum de Blurryface">
   </figure>
+  
 
   <div class="name__album">
     <h2>Blurryface</h2>
   </div> 
 </div> 
 
-<div>
+<div data-aos="zoom-in-down">
 
   <figure>
     <img src="../img/album_trench.jpeg" alt="Imagen del,álbum de Trench">
@@ -113,7 +116,7 @@
 
 </div> 
  
- <div>
+<div data-aos="zoom-in-down">
 
  <figure>
     <img src="../img/sai_album.jpg" alt="Imagen del álbum Scaled and Icy">
@@ -125,7 +128,7 @@
 
 </div>
 
-<div>
+<div data-aos="zoom-in-down">
 
  <figure>
     <img src="../img/clancy_album.jpg" alt="Imagen del álbum Clancy">
@@ -139,6 +142,7 @@
 
 </section>
 
+
 </main>
 <Footer>
     <ul>
@@ -147,5 +151,9 @@
 
 </Footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+   AOS.init();
+ </script>
 </body>
 </html>
