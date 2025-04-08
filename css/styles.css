@@ -39,7 +39,7 @@ h2 {
 }
 
 .titulo__principal h1 {
-  color: rgb(255, 255, 255);
+  color: white;
   font-size: 10vw;
   font-weight: bolder;
 }
@@ -80,13 +80,11 @@ h2 {
   gap: 20px;
   object-fit: cover;
 }
-
-.name__album {
+.albums--grid .name__album {
   text-align: center;
 }
-
-figure img {
-  width: 100%;
+.albums--grid figure img {
+  width: 90%;
 }
 
 /*Form*/
@@ -112,7 +110,7 @@ figure img {
   grid-template-rows: repeat(2, 1fr);
   grid-template-areas: "cuentas cuentas redes redes" "numero numero numero logo";
 }
-.contacto .contacto__cuentas--grid {
+.contacto .contacto__cuentas--grid, .contacto .contacto__numero--grid, .contacto .contacto__redes--grid {
   grid-area: cuentas;
   justify-items: center;
 }
@@ -121,7 +119,6 @@ figure img {
 }
 .contacto .contacto__numero--grid {
   grid-area: numero;
-  justify-items: center;
 }
 .contacto .contacto__cuentas--flex {
   display: flex;
@@ -162,24 +159,15 @@ figure img {
 footer ul {
   text-align: center;
   font-family: "Martian Mono", serif;
-  color: rgb(255, 255, 255);
+  color: white;
 }
 footer ul li a {
-  color: rgb(255, 255, 255);
+  color: white;
 }
 
+/*Uso del import abajo x la cascada*/
 @media screen and (max-width: 768px) {
-  body {
-    font-size: 1rem;
-  }
-  h1 {
-    font-size: 3rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-  }
   .titulo__principal h1 {
-    font-size: 10vw;
     color: rgb(95, 95, 95);
   }
   #background__index {
@@ -191,7 +179,6 @@ footer ul li a {
   /*Bio responsive*/
   .bio {
     width: 100vw;
-    justify-content: space-between;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas: "img__ty img__josh" "txt__ty txt__josh" "info      info";

@@ -17,8 +17,7 @@
 
  /*Bio responsive*/
  .bio{
-    width: 100vw; 
-    justify-content: space-between;
+     width: 100vw; 
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows:repeat(3, 1fr);
     grid-template-areas:

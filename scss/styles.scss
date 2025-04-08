@@ -8,7 +8,7 @@ body{ background-color: rgb(139, 139, 139);
     font-weight: 500;
     font-family: 'Courier New', Courier, monospace;
     text-decoration: none;
-    font-size: 1.5vw;}
+    @include font--size (1.5vw)}
     
  .background--oscuro{background-color: rgba(0, 0, 0, 0.699);}
     
@@ -17,21 +17,20 @@ body{ background-color: rgb(139, 139, 139);
     a{text-decoration: none;
     color: $font__principal--color;}
 
-    i{font-size: 1.7rem;}
+    i{@include font--size(1.7rem)}
 
     h1{text-align: $center;
-        font-size: 5vw;}
+       @include font--size (5vw)}
 
-    h2 {font-size: 3rem ;}
+   h2{ @include font--size (3rem)}
         
     .titulo__principal {
-        h1 {color: rgb(255, 255, 255);
+        h1 {color: $font__footer--color;
             font-size: 10vw;
             font-weight: bolder;}
     }
 
-
-   .img--size img{width: $img--size;} 
+    .img--size img{width: $img--size;} 
         
     #background__index { 
          background-image: url(../img/fondo_index.png); 
@@ -52,7 +51,7 @@ body{ background-color: rgb(139, 139, 139);
         .nav-link{
             display: block;
             padding: 25px;
-            font-size: 2rem;
+            @include font--size (2rem)
         }
     }
 }
@@ -63,12 +62,12 @@ body{ background-color: rgb(139, 139, 139);
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 20px;
-    object-fit: cover;}
-
-.name__album{
-text-align: $center;}
-
-figure img{width: $img--size;}
+    object-fit: cover; 
+    .name__album{
+        text-align: $center;}
+        
+        figure img{width: $img--size;}
+ }
 
  /*Form*/
 
@@ -96,10 +95,8 @@ figure img{width: $img--size;}
     "numero numero numero logo";
     .contacto__cuentas--grid{grid-area: cuentas;
         justify-items: $center;}
-    .contacto__redes--grid{grid-area: redes;}
-    .contacto__numero--grid{grid-area: numero;
-        justify-items: $center;
-     }
+    .contacto__redes--grid{ @extend .contacto__cuentas--grid; grid-area: redes;}
+    .contacto__numero--grid{ @extend .contacto__cuentas--grid; grid-area: numero; }
     .contacto__cuentas--flex{
         display: flex;
         li a {margin: 0 15px;}
@@ -114,8 +111,7 @@ figure img{width: $img--size;}
     display: grid;
     justify-content: space-between ;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    row-gap: 20px;
+     grid-template-rows: repeat(2, 1fr);
     grid-template-areas: 
     "img__ty img__josh info info"
     "txt__ty txt__josh info info";
@@ -131,10 +127,10 @@ figure img{width: $img--size;}
 footer ul {
     text-align: $center;
     font-family: "Martian Mono", serif;
-    color: rgb(255, 255, 255) ; 
+    color: $font__footer--color; 
 
     li a {
-      color: rgb(255, 255, 255);}
+      color: $font__footer--color;}
   }
 
    

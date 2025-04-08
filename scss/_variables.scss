@@ -1,3 +1,5 @@
 $img--size: 90%;
 $font__principal--color: black;
+$font__footer--color: white;
 $center: center;
+@mixin font--size ($font--size){ font-size: $font--size;}
