@@ -9,6 +9,9 @@ body {
   font-weight: 500;
   font-family: "Courier New", Courier, monospace;
   text-decoration: none;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
   font-size: 1.5vw;
 }
 
@@ -26,16 +29,20 @@ a {
 }
 
 i {
-  font-size: 1.7rem;
+  font-size: 2rem;
 }
 
 h1 {
   text-align: center;
-  font-size: 5vw;
+  font-size: 6vw;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 3.5vw;
+}
+
+h3 {
+  font-size: 2.8vw;
 }
 
 .titulo__principal h1 {
@@ -44,8 +51,9 @@ h2 {
   font-weight: bolder;
 }
 
-.img--size img {
-  width: 90%;
+.img--size img, figure img {
+  width: 320px;
+  display: block;
 }
 
 #background__index {
@@ -66,10 +74,49 @@ h2 {
   display: flex;
   justify-content: space-around;
 }
-.navbar .navbar-nav .nav-link {
+.navbar .navbar-nav .nav-item {
+  position: relative;
+}
+.navbar .navbar-nav .nav-item::before {
+  content: "";
+  position: absolute;
+  height: 33.33%;
+  width: 0;
+  background-color: #424242;
+  transition: all 0.5s;
+  right: 0;
+  z-index: 0;
+  top: 33.33%;
+}
+.navbar .navbar-nav .nav-item::after {
+  content: "";
+  position: absolute;
+  height: 33.33%;
+  width: 0;
+  background-color: #424242;
+  transition: all 0.5s;
+  left: 0;
+  z-index: 0;
+  bottom: 0;
+}
+.navbar .navbar-nav .nav-item .nav-link {
+  position: relative;
   display: block;
   padding: 25px;
   font-size: 2rem;
+}
+.navbar .navbar-nav .nav-item .nav-link::before {
+  content: "";
+  position: absolute;
+  height: 33.33%;
+  width: 0;
+  background-color: #424242;
+  transition: all 0.5s;
+  bottom: 66.66%;
+  left: 0;
+}
+.navbar .navbar-nav .nav-item:hover::before, .navbar .navbar-nav .nav-item:hover::after, .navbar .navbar-nav .nav-item:hover .nav-link::before {
+  width: 100%;
 }
 
 /*Albums*/
@@ -77,14 +124,10 @@ h2 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 20px;
-  object-fit: cover;
+  gap: 10px;
 }
 .albums--grid .name__album {
   text-align: center;
-}
-.albums--grid figure img {
-  width: 90%;
 }
 
 /*Form*/
@@ -120,11 +163,26 @@ h2 {
 .contacto .contacto__numero--grid {
   grid-area: numero;
 }
+.contacto .contacto__numero--grid ul li {
+  margin: 5px 0;
+}
 .contacto .contacto__cuentas--flex {
   display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 .contacto .contacto__cuentas--flex li a {
-  margin: 0 15px;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+.contacto .contacto__cuentas--flex li a:hover {
+  color: #424242;
+}
+.contacto .logo {
+  grid-area: logo;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .contacto .logo img {
   border-radius: 70%;
@@ -134,7 +192,6 @@ h2 {
 /*Bio*/
 .bio {
   display: grid;
-  justify-content: space-between;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-template-areas: "img__ty img__josh info info" "txt__ty txt__josh info info";
@@ -165,7 +222,7 @@ footer ul li a {
   color: white;
 }
 
-/*Uso del import abajo x la cascada*/
+/*Responsive general*/
 @media screen and (max-width: 768px) {
   .titulo__principal h1 {
     color: rgb(95, 95, 95);
@@ -176,12 +233,14 @@ footer ul li a {
     min-height: 640px;
     max-height: 1024px;
   }
+  .img--size img {
+    width: 175px;
+  }
   /*Bio responsive*/
   .bio {
-    width: 100vw;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas: "img__ty img__josh" "txt__ty txt__josh" "info      info";
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "img__ty img__josh" "txt__ty txt__josh" "info info";
   }
   /*Albums responsive*/
   .albums--grid {

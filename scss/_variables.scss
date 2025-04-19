@@ -1,5 +1,16 @@
-$img--size: 90%;
+$img--size: 320px;
+$img__responsive--size: 175px;
 $font__principal--color: black;
 $font__footer--color: white;
 $center: center;
+$color-hover: #424242;
 @mixin font--size ($font--size){ font-size: $font--size;}
+@mixin nav-hover {
+    content: "";
+    position: absolute;
+    height: 33.33%;
+    width: 0;
+    background-color: $color-hover;
+    transition: all 0.5s;
+  }
+  

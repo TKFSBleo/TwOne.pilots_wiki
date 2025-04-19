@@ -1,4 +1,4 @@
-@import 'variables';
+@use 'variables' as *;
 
 /*General changes*/
 body{ background-color: rgb(139, 139, 139);
@@ -8,8 +8,11 @@ body{ background-color: rgb(139, 139, 139);
     font-weight: 500;
     font-family: 'Courier New', Courier, monospace;
     text-decoration: none;
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
     @include font--size (1.5vw)}
-    
+ 
  .background--oscuro{background-color: rgba(0, 0, 0, 0.699);}
     
     li{list-style: none;}
@@ -17,12 +20,14 @@ body{ background-color: rgb(139, 139, 139);
     a{text-decoration: none;
     color: $font__principal--color;}
 
-    i{@include font--size(1.7rem)}
+    i{@include font--size(2rem)}
 
     h1{text-align: $center;
-       @include font--size (5vw)}
+       @include font--size (6vw)}
 
-   h2{ @include font--size (3rem)}
+   h2{ @include font--size (3.5vw)}
+
+   h3{ @include font--size (2.8vw)}
         
     .titulo__principal {
         h1 {color: $font__footer--color;
@@ -30,7 +35,10 @@ body{ background-color: rgb(139, 139, 139);
             font-weight: bolder;}
     }
 
-    .img--size img{width: $img--size;} 
+    .img--size img, figure img{
+        width: $img--size;
+        display: block;
+    } 
         
     #background__index { 
          background-image: url(../img/fondo_index.png); 
@@ -45,28 +53,59 @@ body{ background-color: rgb(139, 139, 139);
     background-color: rgba(99, 99, 99, 0.783);
     width: 100vw;
     margin-top: 0;
+  
     .navbar-nav {
-        display: flex;
-        justify-content: space-around;
-        .nav-link{
-            display: block;
-            padding: 25px;
-            @include font--size (2rem)
+      display: flex;
+      justify-content: space-around;
+  
+      .nav-item {
+        position: relative;
+  
+        &::before {
+          @include nav-hover;
+          right: 0;
+          z-index: 0;
+          top: 33.33%;
         }
+  
+        &::after {
+          @include nav-hover;
+          left: 0;
+          z-index: 0;
+          bottom: 0;
+        }
+  
+        .nav-link {
+          position: relative;
+          display: block;
+          padding: 25px;
+          @include font--size(2rem);
+  
+          &::before {
+            @include nav-hover;
+            bottom: 66.66%;
+            left: 0;
+          }
+        }
+        &:hover::before,
+        &:hover::after,
+        &:hover .nav-link::before {
+          width: 100%;
+        }
+      }
     }
-}
+  }
+  
 
 /*Albums*/
 .albums--grid{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 20px;
-    object-fit: cover; 
+    gap: 10px;
     .name__album{
         text-align: $center;}
-        
-        figure img{width: $img--size;}
+   
  }
 
  /*Form*/
@@ -86,40 +125,80 @@ body{ background-color: rgb(139, 139, 139);
 
 
 /*Social media*/ 
- 
-.contacto{display: grid;
+.contacto {
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
-    "cuentas cuentas redes redes"
-    "numero numero numero logo";
-    .contacto__cuentas--grid{grid-area: cuentas;
-        justify-items: $center;}
-    .contacto__redes--grid{ @extend .contacto__cuentas--grid; grid-area: redes;}
-    .contacto__numero--grid{ @extend .contacto__cuentas--grid; grid-area: numero; }
-    .contacto__cuentas--flex{
-        display: flex;
-        li a {margin: 0 15px;}
-     }
-    .logo img{border-radius: 70%;
-        width: 40%;}
- }
+      "cuentas cuentas redes redes"
+      "numero numero numero logo";
+  
+    .contacto__cuentas--grid {
+      grid-area: cuentas;
+      justify-items: $center;
+    }
+  
+    .contacto__redes--grid {
+      @extend .contacto__cuentas--grid;
+      grid-area: redes;
+    }
+  
+    .contacto__numero--grid {
+      @extend .contacto__cuentas--grid;
+      grid-area: numero;
+
+        ul li {
+          margin: 5px 0;
+        }
+    }
+  
+    .contacto__cuentas--flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+  
+       li a {
+          margin: 0 10px;
+
+          transition: color 0.3s;
+  
+          &:hover {
+            color: $color-hover;
+          }
+        }
+      }
+  
+    .logo {
+      grid-area: logo;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      img {
+        border-radius: 70%;
+        width: 40%;
+      }
+    }
+  }
+  
 
  /*Bio*/  
 
  .bio{
     display: grid;
-    justify-content: space-between ;
-    grid-template-columns: repeat(4, 1fr);
+     grid-template-columns: repeat(4, 1fr);
      grid-template-rows: repeat(2, 1fr);
     grid-template-areas: 
     "img__ty img__josh info info"
     "txt__ty txt__josh info info";
-    .img__ty{grid-area: img__ty;}
-    .img__josh{grid-area: img__josh;}
+    .img__ty{grid-area: img__ty; 
+    }
+    .img__josh{grid-area: img__josh;
+    }
     .bio__tyler--grid {grid-area: txt__ty;}
     .bio__josh--grid{grid-area: txt__josh;}
-    .bio__info--grid{grid-area: info;}
+    .bio__info--grid{ grid-area: info;}
+    
  }
 
  /*Footer*/
@@ -131,8 +210,55 @@ footer ul {
 
     li a {
       color: $font__footer--color;}
-  }
+   }
 
-   
-  /*Uso del import abajo x la cascada*/
-  @import 'responsive';
+   /*Responsive general*/
+   @media screen and (max-width: 768px) { 
+ .titulo__principal {
+     h1 {
+        color: rgb(95, 95, 95);
+        } }
+ 
+    #background__index {
+    background-image: url(../img/fondo_reponsive.jpeg) !important;
+    background-size: cover;
+    min-height: 640px;
+   max-height: 1024px; 
+ } 
+
+ .img--size img{width: $img__responsive--size;} 
+
+ /*Bio responsive*/
+
+    .bio {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas:
+        "img__ty img__josh"
+        "txt__ty txt__josh"
+        "info info";
+    }
+
+  
+
+ /*Albums responsive*/
+ .albums--grid
+    { grid-template-columns: repeat(2, 1fr) ; 
+    grid-template-rows: repeat(4, 1fr);}
+    figure img {width: 45vw;}
+
+   /*Contacto responsive*/
+
+.contacto{grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr) ;
+    grid-template-areas: 
+    "cuentas"
+    "redes"
+    "numero"
+    "logo";
+   }
+   .logo { display: flex;
+    justify-content: center;}
+
+
+}
