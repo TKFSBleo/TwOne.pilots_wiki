@@ -12,7 +12,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
-  font-size: 1.5vw;
+  font-size: 1.2rem;
 }
 
 .background--oscuro {
@@ -21,6 +21,7 @@ body {
 
 li {
   list-style: none;
+  font-size: 1.2rem;
 }
 
 a {
@@ -34,15 +35,15 @@ i {
 
 h1 {
   text-align: center;
-  font-size: 6vw;
+  font-size: 4.5rem;
 }
 
 h2 {
-  font-size: 3.5vw;
+  font-size: 2.5rem;
 }
 
 h3 {
-  font-size: 2.8vw;
+  font-size: 2rem;
 }
 
 .titulo__principal h1 {
@@ -119,6 +120,10 @@ h3 {
   width: 100%;
 }
 
+.offcanvas-body {
+  font-family: "Courier New", Courier, monospace;
+}
+
 /*Albums*/
 .albums--grid {
   display: grid;
@@ -128,6 +133,12 @@ h3 {
 }
 .albums--grid .name__album {
   text-align: center;
+}
+.albums--grid figure:hover img {
+  transform: scale(1.05);
+}
+.albums--grid figure img {
+  transition: transform 0.3s ease;
 }
 
 /*Form*/
@@ -212,6 +223,38 @@ h3 {
   grid-area: info;
 }
 
+#bio__title {
+  text-align: center;
+}
+
+.biografia {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
+  padding: 40px;
+}
+.biografia .container-item-bio {
+  max-width: 450px;
+  min-width: 360px;
+  background-color: #acacac;
+  border: 2px solid #323232;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.562);
+  transition: transform 0.3s ease;
+}
+.biografia .container-item-bio h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+.biografia .container-item-bio p {
+  font-size: 1rem;
+}
+.biografia .container-item-bio:hover {
+  transform: translateY(-5px);
+}
+
 /*Footer*/
 footer ul {
   text-align: center;
@@ -220,6 +263,17 @@ footer ul {
 }
 footer ul li a {
   color: white;
+}
+
+/*Iframe*/
+.iframe__spotify {
+  display: flex;
+  justify-content: center;
+}
+.iframe__spotify iframe {
+  max-width: 700px;
+  min-width: 360px;
+  border-radius: 12px;
 }
 
 /*Responsive general*/
@@ -233,6 +287,15 @@ footer ul li a {
     min-height: 640px;
     max-height: 1024px;
   }
+  p {
+    font-size: 0.9rem;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
   .img--size img {
     width: 175px;
   }
@@ -241,6 +304,10 @@ footer ul li a {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, auto);
     grid-template-areas: "img__ty img__josh" "txt__ty txt__josh" "info info";
+  }
+  .biografia {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(8, 1fr);
   }
   /*Albums responsive*/
   .albums--grid {
